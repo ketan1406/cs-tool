@@ -1,13 +1,46 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS Tool</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+
+<body>
+  <div id="app">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <h2>CS Tool</h2>
+      <nav>
+        <ul>
+          <li data-section="format">Format</li>
+          <li data-section="case">Case</li>
+          <li data-section="others">Others</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="content">
+      <header>
+        <h1>Welcome to CS Tool</h1>
+        <button id="theme-toggle" aria-label="Toggle Theme">
+          <img id="theme-icon" src="https://img.icons8.com/?size=100&id=3dxwW3xZfAj4&format=png&color=000000"
+            alt="Toggle Theme" />
+        </button>
+      </header>
+      <section id="tool-area">
+        <div class="input-output">
+          <textarea id="input" placeholder="Enter your text here"></textarea>
+          <button id="convert-btn">Convert</button>
+          <textarea id="output" placeholder="Output will appear here"></textarea>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>
