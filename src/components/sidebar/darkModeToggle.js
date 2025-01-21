@@ -1,30 +1,52 @@
 export function createDarkModeToggle() {
   const toggle = document.createElement("div");
   toggle.className =
-    "flex items-center gap-2 p-2 cursor-pointer rounded-lg bg-gray-200 dark:bg-gray-700";
+    "dark-mode-toggle relative flex h-12 w-24 items-center gap-2 rounded-full p-1 cursor-pointer transition-all duration-300 ease-in-out bg-gray-2 dark:bg-dark-2";
 
-  // Set initial mode
-  const currentMode = localStorage.getItem("color-mode") || "light";
-  document.documentElement.setAttribute("data-theme", currentMode);
+  // Create slider
+  const slider = document.createElement("div");
+  slider.className =
+    "dark-mode-slider absolute h-10 w-10 flex items-center justify-center rounded-full transition-transform duration-300 bg-white dark:bg-dark-3";
 
-  toggle.innerHTML = `
-    <img src="/assets/${
-      currentMode === "dark" ? "dark-mode-icon" : "light-mode-icon"
-    }.svg" alt="${currentMode} mode" class="h-5 w-5" />
-    <span>${currentMode === "dark" ? "Dark Mode" : "Light Mode"}</span>
-  `;
+  // Add SVG inside the slider
+  const svgIcon = document.createElement("img");
+  const initialMode = localStorage.getItem("color-mode") || "light";
+  svgIcon.src =
+    initialMode === "dark"
+      ? "./assets/dark-mode-icon.svg"
+      : "./assets/light-mode-icon.svg";
+  svgIcon.className = "h-6 w-6 transition-transform duration-300";
+  slider.appendChild(svgIcon);
 
+  // Initial slider position
+  slider.style.transform =
+    initialMode === "dark" ? "translateX(48px)" : "translateX(0)";
+  toggle.appendChild(slider);
+
+  // Set initial mode on document
+  document.documentElement.classList.toggle("dark", initialMode === "dark");
+
+  // Click Event to toggle mode
   toggle.addEventListener("click", () => {
+    // Toggle between dark and light mode
+    const currentMode = document.documentElement.classList.contains("dark")
+      ? "dark"
+      : "light";
     const newMode = currentMode === "light" ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", newMode);
+
+    // Save new mode to localStorage
     localStorage.setItem("color-mode", newMode);
 
-    toggle.innerHTML = `
-      <img src="/assets/${
-        newMode === "dark" ? "dark-mode-icon" : "light-mode-icon"
-      }.svg" alt="${newMode} mode" class="h-5 w-5" />
-      <span>${newMode === "dark" ? "Dark Mode" : "Light Mode"}</span>
-    `;
+    // Toggle dark class on <html>
+    document.documentElement.classList.toggle("dark", newMode === "dark");
+
+    // Update slider position and icon
+    slider.style.transform =
+      newMode === "dark" ? "translateX(48px)" : "translateX(0)";
+    svgIcon.src =
+      newMode === "dark"
+        ? "./assets/dark-mode-icon.svg"
+        : "./assets/light-mode-icon.svg";
   });
 
   return toggle;
