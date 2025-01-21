@@ -45,3 +45,11 @@ img.h-6 {
   width: 1.5rem; /* Tailwind h-6 equivalent */
   height: 1.5rem; /* Tailwind w-6 equivalent */
 }
+
+.hidden {
+  display: none;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
