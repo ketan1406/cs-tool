@@ -1,138 +1,28 @@
-/* CSS Variables for Light Mode */
-:root {
-  --background-color: #ffffff;
-  --text-color: #000000;
-  --button-background: #00d4ff;
-  --button-text: #ffffff;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles if needed */
+.sidebar {
+  @apply w-64 bg-white dark:bg-gray-800 h-full p-4 border-r border-gray-200 dark:border-gray-700;
 }
 
-/* CSS Variables for Dark Mode */
-[data-theme="dark"] {
-  --background-color: #121212;
-  --text-color: #ffffff;
-  --button-background: #333333;
-  --button-text: #00d4ff;
+.sidebar-header {
+  @apply flex justify-between items-center mb-6;
 }
 
-/* General Reset */
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  margin: 0;
-  font-family: Arial, sans-serif;
-  display: flex;
-  height: 100vh;
+.sidebar-item {
+  @apply mb-4 text-gray-700 dark:text-gray-300 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700;
 }
 
-/* Sidebar */
-#sidebar {
-  width: 250px;
-  background: var(--text-color);
-  color: var(--background-color);
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
+.sidebar-dropdown {
+  @apply ml-4 text-sm text-gray-500 dark:text-gray-400;
 }
 
-#sidebar h2 {
-  margin: 0 0 20px;
-  font-size: 1.5rem;
-  color: var(--button-background);
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-
-#sidebar nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#sidebar nav ul li {
-  padding: 10px;
-  margin: 5px 0;
-  cursor: pointer;
-  background: var(--button-background);
-  color: var(--button-text);
-  text-align: center;
-  border-radius: 5px;
-}
-
-#sidebar nav ul li:hover {
-  opacity: 0.9;
-}
-
-#sidebar nav ul li.active {
-  background: var(--button-text);
-  color: var(--button-background);
-}
-
-/* Main Content */
-#content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--button-background);
-  padding: 10px;
-  margin-bottom: 20px;
-  color: var(--button-text);
-}
-
-#tool-area {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-textarea {
-  width: 100%;
-  height: 100px;
-  margin: 10px 0;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: var(--background-color);
-  color: var(--text-color);
-}
-
-#convert-btn {
-  background: var(--button-background);
-  color: var(--button-text);
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-#convert-btn:hover {
-  opacity: 0.9;
-}
-
-/* Theme Toggle Button */
-#theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-}
-
-#theme-icon {
-  width: 30px;
-  height: 30px;
-}
-
-#theme-toggle:hover #theme-icon {
-  opacity: 0.8;
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
