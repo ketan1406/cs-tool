@@ -24,10 +24,8 @@ const menuGroups = [
   },
 ];
 
-// Initialize the Sidebar
 document.addEventListener("DOMContentLoaded", () => {
-  const app = document.getElementById("app"); // Ensure you have a root div with id="app"
+  const app = document.getElementById("app");
   const sidebar = createSidebar(menuGroups);
-
   app.appendChild(sidebar);
 });

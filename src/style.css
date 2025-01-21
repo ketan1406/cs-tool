@@ -2,21 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom styles if needed */
+/* General Sidebar Styling */
 .sidebar {
-  @apply w-64 bg-white dark:bg-gray-800 h-full p-4 border-r border-gray-200 dark:border-gray-700;
+  @apply w-72 bg-gray dark:bg-dark h-full p-4 border-r border-gray-3 dark:border-dark-2;
 }
 
 .sidebar-header {
-  @apply flex justify-between items-center mb-6;
+  @apply flex items-center justify-between mb-6;
 }
 
-.sidebar-item {
-  @apply mb-4 text-gray-700 dark:text-gray-300 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700;
+.sidebar ul {
+  @apply space-y-2 mb-6;
 }
 
-.sidebar-dropdown {
-  @apply ml-4 text-sm text-gray-500 dark:text-gray-400;
+.sidebar li {
+  @apply text-gray-5 dark:text-dark-6 hover:bg-gray-2 dark:hover:bg-dark-2 rounded-lg p-3;
+}
+
+.sidebar h2 {
+  @apply text-sm font-semibold text-gray-4 dark:text-dark-3 uppercase mb-3;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  @apply relative flex h-12 w-24 items-center gap-2 rounded-full p-1 cursor-pointer bg-gray-2 dark:bg-dark-2;
+}
+
+.dark-mode-slider {
+  @apply absolute h-10 w-10 rounded-full transition-transform duration-300 bg-white dark:bg-dark-3;
 }
 
 .no-scrollbar::-webkit-scrollbar {
@@ -25,4 +38,10 @@
 .no-scrollbar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+img.h-6 {
+  display: inline-block; /* Ensure it's visible */
+  width: 1.5rem; /* Tailwind h-6 equivalent */
+  height: 1.5rem; /* Tailwind w-6 equivalent */
 }
