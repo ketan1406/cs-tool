@@ -14,6 +14,7 @@ export default {
           DEFAULT: "#1A202C", // Default dark background
           2: "#2D3748", // Slightly lighter dark mode color
           3: "#4A5568", // Used for text
+          4: "#1C2538", // Main content bg
           6: "#A0AEC0", // Muted text
         },
         gray: {

@@ -153,8 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // 2) Create main content area to the right of the sidebar
   const mainContent = document.createElement("div");
   mainContent.id = "mainContent";
-  mainContent.className =
-    "flex-1 p-6 overflow-auto text-gray-7 dark:text-dark-6";
+  mainContent.className = "flex-1 p-6 overflow-auto bg-gray-100 dark:bg-dark-4";
   // .flex-1 so it occupies remaining space
   // .p-6 for spacing
   // .overflow-auto if you want it scrollable
