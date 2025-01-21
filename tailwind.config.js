@@ -20,9 +20,10 @@ export default {
           DEFAULT: "#F7FAFC", // Light background
           2: "#EDF2F7", // Light gray for hover
           3: "#E2E8F0", // Borders
-          4: "#CBD5E0", // Subtle text
+          4: "#6885A3", // Subtle text
           5: "#718096", // Muted text
           6: "#A0AEC0", // Disabled text
+          7: "#EDF2F7", // slider bg
         },
       },
     },
