@@ -23,16 +23,13 @@ export function createSidebar(menuGroups) {
     const groupTitle = document.createElement("div");
     groupTitle.textContent = group.label;
     groupTitle.className =
-      "flex items-center justify-between pb-5 text-sm font-semibold text-gray-4 dark:text-dark-3 uppercase cursor-pointer";
-
+      "relative flex items-center justify-between pb-5 text-sm font-semibold text-gray-4 dark:text-dark-3 uppercase cursor-pointer";
     // Add arrow SVG for dropdown
     const arrow = document.createElement("span");
     arrow.innerHTML = `
       <svg
-        class="h-6 w-6 absolute right-3.5 top-1/2 -translate-y-1/2 fill-current transition-transform duration-200"
-        width="11"
-        height="11"
-        viewBox="0 0 11 11"
+        class="h-4 w-4 absolute right-3.5 top-1/2 -translate-y-1/2 fill-current transition-transform duration-200"
+        viewBox="0 0 18 14"
         stroke="currentColor"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
