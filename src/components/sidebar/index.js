@@ -10,7 +10,7 @@ export function createSidebar(menuGroups) {
   header.className = "flex items-center justify-between mb-6";
   const title = document.createElement("h1");
   title.textContent = "CS Tool";
-  title.className = "text-lg font-bold text-primary dark:text-white";
+  title.className = "text-3xl font-bold text-[#9003fc] dark:text-white";
   header.appendChild(title);
   header.appendChild(createDarkModeToggle());
   sidebar.appendChild(header);
@@ -23,7 +23,7 @@ export function createSidebar(menuGroups) {
     const groupTitle = document.createElement("div");
     groupTitle.textContent = group.label;
     groupTitle.className =
-      "relative flex items-center justify-between pb-5 text-sm font-semibold text-gray-4 dark:text-dark-3 uppercase cursor-pointer";
+      "relative flex items-center justify-between pb-5 text-sm font-semibold text-gray-4 dark:text-dark-6 uppercase cursor-pointer";
     // Add arrow SVG for dropdown
     const arrow = document.createElement("span");
     arrow.innerHTML = `

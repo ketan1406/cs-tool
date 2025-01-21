@@ -1,12 +1,12 @@
 export function createDarkModeToggle() {
   const toggle = document.createElement("div");
   toggle.className =
-    "dark-mode-toggle relative flex h-12 w-28 items-center gap-2 rounded-full pl-4 cursor-pointer transition-all duration-300 ease-in-out bg-gray-2 dark:bg-dark-2";
+    "dark-mode-toggle relative flex h-12 w-28 items-center gap-2 rounded-full pl-4 cursor-pointer transition-all duration-300 ease-in-out bg-gray-7 dark:bg-dark-2";
 
   // Create slider
   const slider = document.createElement("div");
   slider.className =
-    "dark-mode-slider absolute h-10 w-10 flex items-center justify-center rounded-full transition-transform duration-300 bg-white dark:bg-dark-3";
+    "dark-mode-slider absolute h-10 w-10 flex items-center justify-center rounded-full transition-transform duration-300 bg-white dark:bg-dark-6";
 
   // Add Inline SVG based on initial mode
   const initialMode = localStorage.getItem("color-mode") || "light";
@@ -14,14 +14,14 @@ export function createDarkModeToggle() {
   svgIcon.innerHTML =
     initialMode === "dark"
       ? `<svg
-            class="h-6 w-6 fill-current text-white"
+            class="h-6 w-6 fill-current text-[#9003fc]"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               stroke-linecap="round" 
               stroke-linejoin="round" 
-              stroke-width="1"
+              stroke-width="3"
               d="M9.18118 2.33448C5.30895 2.74335 2.29169 6.01923 2.29169 9.99984C2.29169 14.257 5.74283 17.7082 10 17.7082C13.9806 17.7082 17.2565 14.6909 17.6654 10.8187C16.5598 12.2222 14.8439 13.1248 12.9167 13.1248C9.57997 13.1248 6.87502 10.4199 6.87502 7.08317C6.87502 5.15599 7.77765 3.44009 9.18118 2.33448ZM1.04169 9.99984C1.04169 5.05229 5.05247 1.0415 10 1.0415C10.5972 1.0415 10.8962 1.51755 10.9474 1.89673C10.9967 2.26148 10.8618 2.72538 10.4426 2.97873C9.05223 3.81884 8.12502 5.34302 8.12502 7.08317C8.12502 9.72954 10.2703 11.8748 12.9167 11.8748C14.6568 11.8748 16.181 10.9476 17.0211 9.55731C17.2745 9.13804 17.7384 9.00321 18.1031 9.05247C18.4823 9.10368 18.9584 9.40265 18.9584 9.99984C18.9584 14.9474 14.9476 18.9582 10 18.9582C5.05247 18.9582 1.04169 14.9474 1.04169 9.99984Z"
             />
 </svg>`
@@ -68,14 +68,14 @@ export function createDarkModeToggle() {
     svgIcon.innerHTML =
       newMode === "dark"
         ? `<svg
-            class="h-6 w-6 fill-current text-white"
+            class="h-6 w-6 fill-current text-[#9003fc]"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
               stroke-linecap="round" 
               stroke-linejoin="round" 
-              stroke-width="1"
+              stroke-width="3"
               d="M9.18118 2.33448C5.30895 2.74335 2.29169 6.01923 2.29169 9.99984C2.29169 14.257 5.74283 17.7082 10 17.7082C13.9806 17.7082 17.2565 14.6909 17.6654 10.8187C16.5598 12.2222 14.8439 13.1248 12.9167 13.1248C9.57997 13.1248 6.87502 10.4199 6.87502 7.08317C6.87502 5.15599 7.77765 3.44009 9.18118 2.33448ZM1.04169 9.99984C1.04169 5.05229 5.05247 1.0415 10 1.0415C10.5972 1.0415 10.8962 1.51755 10.9474 1.89673C10.9967 2.26148 10.8618 2.72538 10.4426 2.97873C9.05223 3.81884 8.12502 5.34302 8.12502 7.08317C8.12502 9.72954 10.2703 11.8748 12.9167 11.8748C14.6568 11.8748 16.181 10.9476 17.0211 9.55731C17.2745 9.13804 17.7384 9.00321 18.1031 9.05247C18.4823 9.10368 18.9584 9.40265 18.9584 9.99984C18.9584 14.9474 14.9476 18.9582 10 18.9582C5.05247 18.9582 1.04169 14.9474 1.04169 9.99984Z"
             />
 </svg>`
