@@ -2,25 +2,41 @@ import { createSidebar } from "./components/sidebar/index.js";
 
 const menuGroups = [
   {
-    label: "Hashing",
+    label: "XML",
     children: [
-      { label: "MD5", route: "/md5" },
-      { label: "SHA1", route: "/sha1" },
+      { label: "Validator", route: "/xmlvalidator" },
+      { label: "Minifier", route: "/xmlminifier" },
+      { label: "Formatter", route: "/xmlformatter" },
     ],
   },
   {
-    label: "Encryption",
+    label: "JSON",
     children: [
-      { label: "AES", route: "/aes" },
-      { label: "RSA", route: "/rsa" },
+      { label: "Validator", route: "/jsonvalidator" },
+      { label: "Minifier", route: "/jsonminifier" },
+      { label: "Formatter", route: "/jsonformatter" },
+      { label: "Viewer", route: "/jsonviewer" },
     ],
   },
   {
-    label: "Utilities",
+    label: "Case",
     children: [
-      { label: "Uppercase Converter", route: "/uppercase" },
-      { label: "Lowercase Converter", route: "/lowercase" },
+      { label: "UPPER CASE", route: "/uppercase" },
+      { label: "lower case", route: "/lowercase" },
+      { label: "UpperCamelCase", route: "/uppercamelcase" },
+      { label: "lowerCamelCase", route: "/lowercamelcase" },
+      { label: "snake_case", route: "/snakecase" },
+      { label: "kebab-case", route: "/kebabcase" },
+      { label: "CONSTANT_CASE", route: "/constantcase" },
     ],
+  },
+  {
+    label: "Others",
+    children: [{ label: "QR Code Generator", route: "/qrcodegenerator" }],
+  },
+  {
+    label: "Links",
+    children: [{ label: "Contact", route: "/contact" }],
   },
 ];
 

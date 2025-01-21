@@ -3,7 +3,7 @@ import { createDarkModeToggle } from "./darkModeToggle.js";
 export function createSidebar(menuGroups) {
   const sidebar = document.createElement("aside");
   sidebar.className =
-    "w-72 bg-gray dark:bg-dark h-screen p-4 border-r border-gray-3 dark:border-dark-2";
+    "w-72 bg-gray dark:bg-dark p-4 border-r border-gray-3 dark:border-dark-2 h-full overflow-y-auto no-scrollbar";
 
   // Sidebar Header
   const header = document.createElement("div");
@@ -28,17 +28,15 @@ export function createSidebar(menuGroups) {
     const arrow = document.createElement("span");
     arrow.innerHTML = `
       <svg
-        class="h-4 w-4 absolute right-3.5 top-1/2 -translate-y-1/2 fill-current transition-transform duration-200"
-        viewBox="0 0 18 14"
-        stroke="currentColor"
-        fill="none"
+        class="h-7 w-7 transform transition-transform duration-200 fill-current"
+        viewBox="0 0 20 20"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <!-- A simple down arrow path -->
         <path
-          stroke-linecap="round" 
-          stroke-linejoin="round" 
-          stroke-width="1"
-          d="M10.5525 7.72801C10.81 7.50733 11.1899 7.50733 11.4474 7.72801L17.864 13.228C18.1523 13.4751 18.1857 13.9091 17.9386 14.1974C17.6915 14.4857 17.2575 14.5191 16.9692 14.272L10.9999 9.15549L5.03068 14.272C4.7424 14.5191 4.30838 14.4857 4.06128 14.1974C3.81417 13.9091 3.84756 13.4751 4.13585 13.228L10.5525 7.72801Z"
+          fill-rule="evenodd"
+          d="M5.23 7.21a.75.75 0 011.06.02L10 10.439l3.71-3.21a.75.75 0 111.04 1.08l-4.235 3.665a.75.75 0 01-.98 0L5.23 8.27a.75.75 0 01.02-1.06z"
+          clip-rule="evenodd"
         />
       </svg>
     `;
@@ -66,9 +64,9 @@ export function createSidebar(menuGroups) {
 
     // Toggle dropdown functionality
     groupTitle.addEventListener("click", () => {
-      const isOpen = groupList.classList.contains("hidden");
-      groupList.classList.toggle("hidden", !isOpen);
-      arrow.firstElementChild.classList.toggle("rotate-180", isOpen);
+      const isOpen = !groupList.classList.contains("hidden");
+      groupList.classList.toggle("hidden", isOpen);
+      arrow.firstElementChild.classList.toggle("rotate-180", !isOpen);
     });
   });
 

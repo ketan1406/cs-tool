@@ -1,7 +1,7 @@
 export function createDarkModeToggle() {
   const toggle = document.createElement("div");
   toggle.className =
-    "dark-mode-toggle relative flex h-12 w-24 items-center gap-2 rounded-full p-1 cursor-pointer transition-all duration-300 ease-in-out bg-gray-2 dark:bg-dark-2";
+    "dark-mode-toggle relative flex h-12 w-28 items-center gap-2 rounded-full pl-4 cursor-pointer transition-all duration-300 ease-in-out bg-gray-2 dark:bg-dark-2";
 
   // Create slider
   const slider = document.createElement("div");
@@ -14,10 +14,8 @@ export function createDarkModeToggle() {
   svgIcon.innerHTML =
     initialMode === "dark"
       ? `<svg
-            class="h-6 w-6"
+            class="h-6 w-6 fill-current text-white"
             viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
@@ -70,10 +68,8 @@ export function createDarkModeToggle() {
     svgIcon.innerHTML =
       newMode === "dark"
         ? `<svg
-            class="h-6 w-6"
+            class="h-6 w-6 fill-current text-white"
             viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
