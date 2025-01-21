@@ -8,11 +8,33 @@ export function createSidebar(menuGroups) {
   // Sidebar Header
   const header = document.createElement("div");
   header.className = "flex items-center justify-between mb-6";
+
+  // Add title container
+  const titleContainer = document.createElement("div");
+  titleContainer.className = "flex items-center gap-3";
+
+  // Add the tool icon
+  const toolIcon = document.createElement("img");
+  toolIcon.src = "/assets/icon-tools.png"; // Path to your tool icon
+  toolIcon.alt = "Tool Icon";
+  toolIcon.className = "h-8 w-8"; // Adjust size as needed
+
+  // Add the title text
   const title = document.createElement("h1");
   title.textContent = "CS Tool";
-  title.className = "text-3xl font-bold text-[#9003fc] dark:text-white";
-  header.appendChild(title);
+  title.className = "text-2xl font-bold text-primary dark:text-white";
+
+  // Append the icon and title to the container
+  titleContainer.appendChild(toolIcon);
+  titleContainer.appendChild(title);
+
+  // Append the title container to the header
+  header.appendChild(titleContainer);
+
+  // Append the dark mode toggle to the header
   header.appendChild(createDarkModeToggle());
+
+  // Append the header to the sidebar
   sidebar.appendChild(header);
 
   // Sidebar Menu
