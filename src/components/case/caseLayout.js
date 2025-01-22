@@ -190,9 +190,19 @@ export function createCaseLayout({
     "px-4 py-2 rounded bg-gray-7 dark:bg-dark-6 text-white dark:text-white hover:bg-[#050c42] dark:hover:bg-dark-5";
 
   generateLinkBtn.addEventListener("click", () => {
-    const currentUrl = window.location.origin + window.location.pathname;
+    // 1) This is the “base” part: e.g. "https://ketan1406.github.io/cs-tool/index.html"
+    const baseUrl = window.location.origin + window.location.pathname;
+
+    // 2) This includes the current hash route, e.g. "#/case/uppercase"
+    const routePart = window.location.hash;
+
+    // 3) Build a query param with the user’s text
+    //    (You can add more fields if you want: new URLSearchParams({ text, otherKey, ... }))
     const params = new URLSearchParams({ text: inputTextarea.value });
-    shareInput.value = `${currentUrl}?${params.toString()}`;
+
+    // 4) Combine them into a full shareable link
+    //    Example final link: ".../index.html#/case/uppercase?text=Hello%20World"
+    shareInput.value = `${baseUrl}${routePart}?${params.toString()}`;
   });
 
   shareSection.appendChild(shareHeader);
