@@ -1,7 +1,7 @@
 export function createDarkModeToggle() {
   const toggle = document.createElement("div");
   toggle.className =
-    "dark-mode-toggle relative flex h-12 w-28 items-center gap-2 rounded-full pl-4 cursor-pointer transition-all duration-300 ease-in-out bg-gray-7 dark:bg-dark-2";
+    "dark-mode-toggle relative flex h-12 w-28 items-center gap-2 rounded-full pl-4 cursor-pointer transition-all duration-300 ease-in-out bg-gray-3 dark:bg-dark-2";
 
   // Create slider
   const slider = document.createElement("div");
