@@ -8,7 +8,7 @@ export function createCaseLayout({
   // Main container for everything
   const container = document.createElement("div");
   container.className =
-    "w-full h-full text-gray-7 dark:text-dark-6 p-2 flex flex-col gap-2";
+    "w-full h-full text-gray-7 dark:text-dark-6 p-2 flex flex-col gap-2 no-scrollbar";
 
   /**
    * 1) Top Header (Title + Description)
@@ -39,7 +39,7 @@ export function createCaseLayout({
   // Left column
   const leftCol = document.createElement("div");
   leftCol.className =
-    "w-72 p-2 bg-gray-2 dark:bg-dark-3 rounded flex flex-col gap-2";
+    "w-72 p-2 bg-gray-3 dark:bg-dark-3 rounded flex flex-col gap-2";
 
   // Left column heading ("Settings")
   const leftHeader = document.createElement("div");
@@ -84,24 +84,24 @@ export function createCaseLayout({
 
   // Right column
   const rightCol = document.createElement("div");
-  rightCol.className = "flex-1 flex flex-col gap-4";
+  rightCol.className = "flex-1 flex flex-col gap-2";
 
   /**
    *  Right column sections: Input, Output, Share Link
    */
   // -- INPUT SECTION --
   const inputSection = document.createElement("div");
-  inputSection.className = "bg-gray-2 dark:bg-dark-3 rounded p-2";
+  inputSection.className = "bg-gray-3 dark:bg-dark-3 rounded p-2";
 
   // Input header
   const inputHeader = document.createElement("div");
   inputHeader.textContent = "Input";
   inputHeader.className =
-    "pb-2 text-sm uppercase font-semibold text-gray-5 dark:text-dark-4 mb-2";
+    "pb-1 text-sm uppercase font-semibold text-gray-5 dark:text-dark-4 mb-1";
 
   const inputTextarea = document.createElement("textarea");
   inputTextarea.className =
-    "w-full h-40 p-2 rounded border border-gray-3 dark:border-dark-4 bg-gray-1 dark:bg-dark-4 focus:outline-none resize-none";
+    "w-full h-40 p-1 rounded border border-gray-3 dark:border-dark-4 bg-gray-1 dark:bg-dark-4 focus:outline-none resize-none no-scrollbar";
   inputTextarea.placeholder = "Type or paste text here...";
 
   // Expand button (top-right)
@@ -109,7 +109,7 @@ export function createCaseLayout({
   expandInputBtn.title = "Expand";
   expandInputBtn.textContent = "⤢";
   expandInputBtn.className =
-    "float-right text-sm text-gray-5 hover:text-gray-7 dark:hover:text-dark-5 -mt-6 mr-2";
+    "float-right text-sm text-gray-5 hover:text-gray-7 dark:hover:text-dark-5 -mt-1 mr-1";
 
   let isInputExpanded = false;
   expandInputBtn.addEventListener("click", () => {
@@ -124,21 +124,21 @@ export function createCaseLayout({
 
   // -- OUTPUT SECTION --
   const outputSection = document.createElement("div");
-  outputSection.className = "bg-gray-2 dark:bg-dark-3 rounded p-2";
+  outputSection.className = "bg-gray-3 dark:bg-dark-3 rounded p-2";
 
   const outputHeader = document.createElement("div");
   outputHeader.textContent = "Output";
   outputHeader.className =
-    "pb-2 text-sm uppercase font-semibold text-gray-5 dark:text-dark-4 mb-2";
+    "pb-1 text-sm uppercase font-semibold text-gray-5 dark:text-dark-4 mb-1";
 
   const outputTextarea = document.createElement("textarea");
   outputTextarea.readOnly = true;
   outputTextarea.className =
-    "w-full h-32 p-2 rounded border border-gray-3 dark:border-dark-4 bg-gray-1 dark:bg-dark-4 focus:outline-none resize-none";
+    "w-full h-32 p-2 rounded border border-gray-3 dark:border-dark-4 bg-gray-1 dark:bg-dark-4 focus:outline-none resize-none no-scrollbar";
 
   // Copy & expand icons at bottom-right
   const outputFooter = document.createElement("div");
-  outputFooter.className = "flex justify-end items-center gap-2 mt-2";
+  outputFooter.className = "flex justify-end items-center gap-1 mt-1";
 
   const copyBtn = document.createElement("button");
   copyBtn.title = "Copy";
@@ -170,7 +170,7 @@ export function createCaseLayout({
 
   // -- SHARE LINK SECTION --
   const shareSection = document.createElement("div");
-  shareSection.className = "bg-gray-2 dark:bg-dark-3 rounded p-2";
+  shareSection.className = "bg-gray-3 dark:bg-dark-3 rounded p-2";
 
   const shareHeader = document.createElement("div");
   shareHeader.textContent = "Share Link";
@@ -187,7 +187,7 @@ export function createCaseLayout({
   const generateLinkBtn = document.createElement("button");
   generateLinkBtn.textContent = "Generate";
   generateLinkBtn.className =
-    "px-4 py-2 bg-gray-1 dark:bg-dark-6 text-gray-7 dark:text-white rounded hover:bg-gray-3 dark:hover:bg-dark-5";
+    "px-4 py-2 rounded bg-gray-7 dark:bg-dark-6 text-white dark:text-white hover:bg-[#050c42] dark:hover:bg-dark-5";
 
   generateLinkBtn.addEventListener("click", () => {
     const currentUrl = window.location.origin + window.location.pathname;
