@@ -15,6 +15,7 @@ export default {
           2: "#2D3748", // Slightly lighter dark mode color
           3: "#4A5568", // Used for text
           4: "#1C2538", // Main content bg
+          5: "#727b87",
           6: "#A0AEC0", // Muted text
         },
         gray: {
@@ -24,7 +25,7 @@ export default {
           4: "#6885A3", // Subtle text
           5: "#718096", // Muted text
           6: "#A0AEC0", // Disabled text
-          7: "#EDF2F7", // slider bg
+          7: "#030729", // slider bg
         },
       },
     },
