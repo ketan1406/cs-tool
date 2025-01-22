@@ -58,16 +58,33 @@ const menuGroups = [
  */
 function renderRoute() {
   const rawHash = window.location.hash; // e.g. "#/case/uppercase"
-  const path = rawHash.replace(/^#/, ""); // e.g. "/case/uppercase"
+  const pathQuery = rawHash.replace(/^#/, ""); // e.g. "/case/uppercase"
+
+  // Split on the first "?" to separate path from query
+  const [routePath, queryString = ""] = pathQuery.split("?");
+  // Parse query params, if any
+  const params = new URLSearchParams(queryString);
+
   const mainContent = document.getElementById("mainContent");
   mainContent.innerHTML = ""; // clear old content
 
   // For demonstration, we just switch on path:
-  switch (path) {
+  switch (routePath) {
     // -- CASE ROUTES --
-    case "/case/uppercase":
-      mainContent.appendChild(createUpperCasePage());
+    case "/case/uppercase": {
+      const page = createUpperCasePage();
+      mainContent.appendChild(page);
+
+      // If ?text=someValue, fill the textarea
+      const text = params.get("text") || "";
+      if (text) {
+        const inputArea = page.querySelector("textarea");
+        if (inputArea) {
+          inputArea.value = text;
+        }
+      }
       break;
+    }
     case "/case/lowercase":
       mainContent.appendChild(createLowerCasePage());
       break;
