@@ -85,25 +85,90 @@ function renderRoute() {
       }
       break;
     }
-    case "/case/lowercase":
-      mainContent.appendChild(createLowerCasePage());
-      break;
-    case "/case/uppercamelcase":
-      mainContent.appendChild(createUpperCamelCasePage());
-      break;
-    case "/case/lowercamelcase":
-      mainContent.appendChild(createLowerCamelCasePage());
-      break;
-    case "/case/snakecase":
-      mainContent.appendChild(createSnakeCasePage());
-      break;
-    case "/case/kebabcase":
-      mainContent.appendChild(createKebabCasePage());
-      break;
-    case "/case/constantcase":
-      mainContent.appendChild(createConstantCasePage());
-      break;
+    case "/case/lowercase": {
+      const page = createLowerCasePage();
+      mainContent.appendChild(page);
 
+      // If ?text=someValue, fill the textarea
+      const text = params.get("text") || "";
+      if (text) {
+        const inputArea = page.querySelector("textarea");
+        if (inputArea) {
+          inputArea.value = text;
+        }
+      }
+      break;
+    }
+    case "/case/uppercamelcase": {
+      const page = createUpperCamelCasePage();
+      mainContent.appendChild(page);
+
+      // If ?text=someValue, fill the textarea
+      const text = params.get("text") || "";
+      if (text) {
+        const inputArea = page.querySelector("textarea");
+        if (inputArea) {
+          inputArea.value = text;
+        }
+      }
+      break;
+    }
+    case "/case/lowercamelcase": {
+      const page = createLowerCamelCasePage();
+      mainContent.appendChild(page);
+
+      // If ?text=someValue, fill the textarea
+      const text = params.get("text") || "";
+      if (text) {
+        const inputArea = page.querySelector("textarea");
+        if (inputArea) {
+          inputArea.value = text;
+        }
+      }
+      break;
+    }
+    case "/case/snakecase": {
+      const page = createSnakeCasePage();
+      mainContent.appendChild(page);
+
+      // If ?text=someValue, fill the textarea
+      const text = params.get("text") || "";
+      if (text) {
+        const inputArea = page.querySelector("textarea");
+        if (inputArea) {
+          inputArea.value = text;
+        }
+      }
+      break;
+    }
+    case "/case/kebabcase": {
+      const page = createKebabCasePage();
+      mainContent.appendChild(page);
+
+      // If ?text=someValue, fill the textarea
+      const text = params.get("text") || "";
+      if (text) {
+        const inputArea = page.querySelector("textarea");
+        if (inputArea) {
+          inputArea.value = text;
+        }
+      }
+      break;
+    }
+    case "/case/constantcase": {
+      const page = createConstantCasePage();
+      mainContent.appendChild(page);
+
+      // If ?text=someValue, fill the textarea
+      const text = params.get("text") || "";
+      if (text) {
+        const inputArea = page.querySelector("textarea");
+        if (inputArea) {
+          inputArea.value = text;
+        }
+      }
+      break;
+    }
     // -- XML ROUTES (Placeholder) --
     case "/xml/validator":
     case "/xml/minifier":
