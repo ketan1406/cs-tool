@@ -15,7 +15,7 @@ export function createSidebar(menuGroups) {
 
   // Add the tool icon
   const toolIcon = document.createElement("img");
-  toolIcon.src = "/assets/icon-tools.png"; // Path to your tool icon
+  toolIcon.src = "./assets/icon-tools.png"; // Path to your tool icon
   toolIcon.alt = "Tool Icon";
   toolIcon.className = "h-8 w-8"; // Adjust size as needed
 

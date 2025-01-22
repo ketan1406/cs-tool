@@ -12,8 +12,8 @@ export function createDarkModeToggle() {
   const initialMode = localStorage.getItem("color-mode") || "light";
 
   // Local image URLs (assuming they're in public/assets/)
-  const moonIconURL = "/assets/icon-moon.png";
-  const sunIconURL = "/assets/icon-sun.png";
+  const moonIconURL = "./assets/icon-moon.png";
+  const sunIconURL = "./assets/icon-sun.png";
 
   // Create span to hold the icon
   const iconSpan = document.createElement("span");
