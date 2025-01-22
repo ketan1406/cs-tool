@@ -16,30 +16,30 @@ const menuGroups = [
   {
     label: "XML",
     children: [
-      { label: "Validator", route: "/xmlvalidator" },
-      { label: "Minifier", route: "/xmlminifier" },
-      { label: "Formatter", route: "/xmlformatter" },
+      { label: "Validator", route: "/xml/validator" },
+      { label: "Minifier", route: "/xml/minifier" },
+      { label: "Formatter", route: "/xml/formatter" },
     ],
   },
   {
     label: "JSON",
     children: [
-      { label: "Validator", route: "/jsonvalidator" },
-      { label: "Minifier", route: "/jsonminifier" },
-      { label: "Formatter", route: "/jsonformatter" },
-      { label: "Viewer", route: "/jsonviewer" },
+      { label: "Validator", route: "/json/validator" },
+      { label: "Minifier", route: "/json/minifier" },
+      { label: "Formatter", route: "/json/formatter" },
+      { label: "Viewer", route: "/json/viewer" },
     ],
   },
   {
     label: "Case",
     children: [
-      { label: "UPPER CASE", route: "/uppercase" },
-      { label: "lower case", route: "/lowercase" },
-      { label: "UpperCamelCase", route: "/uppercamelcase" },
-      { label: "lowerCamelCase", route: "/lowercamelcase" },
-      { label: "snake_case", route: "/snakecase" },
-      { label: "kebab-case", route: "/kebabcase" },
-      { label: "CONSTANT_CASE", route: "/constantcase" },
+      { label: "UPPER CASE", route: "/case/uppercase" },
+      { label: "lower case", route: "/case/lowercase" },
+      { label: "UpperCamelCase", route: "/case/uppercamelcase" },
+      { label: "lowerCamelCase", route: "/case/lowercamelcase" },
+      { label: "snake_case", route: "/case/snakecase" },
+      { label: "kebab-case", route: "/case/kebabcase" },
+      { label: "CONSTANT_CASE", route: "/case/constantcase" },
     ],
   },
   {
@@ -57,47 +57,48 @@ const menuGroups = [
  * into the #mainContent area based on the current window.location.pathname.
  */
 function renderRoute() {
-  const path = window.location.pathname; // e.g. "/uppercase"
+  const rawHash = window.location.hash; // e.g. "#/case/uppercase"
+  const path = rawHash.replace(/^#/, ""); // e.g. "/case/uppercase"
   const mainContent = document.getElementById("mainContent");
   mainContent.innerHTML = ""; // clear old content
 
   // For demonstration, we just switch on path:
   switch (path) {
     // -- CASE ROUTES --
-    case "/uppercase":
+    case "/case/uppercase":
       mainContent.appendChild(createUpperCasePage());
       break;
-    case "/lowercase":
+    case "/case/lowercase":
       mainContent.appendChild(createLowerCasePage());
       break;
-    case "/uppercamelcase":
+    case "/case/uppercamelcase":
       mainContent.appendChild(createUpperCamelCasePage());
       break;
-    case "/lowercamelcase":
+    case "/case/lowercamelcase":
       mainContent.appendChild(createLowerCamelCasePage());
       break;
-    case "/snakecase":
+    case "/case/snakecase":
       mainContent.appendChild(createSnakeCasePage());
       break;
-    case "/kebabcase":
+    case "/case/kebabcase":
       mainContent.appendChild(createKebabCasePage());
       break;
-    case "/constantcase":
+    case "/case/constantcase":
       mainContent.appendChild(createConstantCasePage());
       break;
 
     // -- XML ROUTES (Placeholder) --
-    case "/xmlvalidator":
-    case "/xmlminifier":
-    case "/xmlformatter":
+    case "/xml/validator":
+    case "/xml/minifier":
+    case "/xml/formatter":
       mainContent.textContent = `Placeholder for ${path}`;
       break;
 
     // -- JSON ROUTES (Placeholder) --
-    case "/jsonvalidator":
-    case "/jsonminifier":
-    case "/jsonformatter":
-    case "/jsonviewer":
+    case "/json/validator":
+    case "/json/minifier":
+    case "/json/formatter":
+    case "/json/viewer":
       mainContent.textContent = `Placeholder for ${path}`;
       break;
 
@@ -128,13 +129,13 @@ function initSPA() {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const route = link.getAttribute("href");
-      window.history.pushState({}, "", route); // update URL, no page reload
+      window.location.hash = route;
       renderRoute(); // re-render
     });
   });
 
   // Handle back/forward buttons
-  window.addEventListener("popstate", () => {
+  window.addEventListener("hashchange", () => {
     renderRoute();
   });
 }
