@@ -11,6 +11,13 @@ import {
   createConstantCasePage,
 } from "./components/case/index.js";
 
+import {
+  createJSONValidator,
+  createJSONMinifier,
+  createJSONFormatter,
+  createJSONViewer,
+} from "./components/format/json/index.js";
+
 // Your existing menu groups
 const menuGroups = [
   {
@@ -178,10 +185,19 @@ function renderRoute() {
 
     // -- JSON ROUTES (Placeholder) --
     case "/json/validator":
+      mainContent.appendChild(createJSONValidator());
+      break;
     case "/json/minifier":
+      mainContent.appendChild(createJSONMinifier());
+      break;
     case "/json/formatter":
+      mainContent.appendChild(createJSONFormatter());
+      break;
     case "/json/viewer":
-      mainContent.textContent = `Placeholder for ${path}`;
+      mainContent.appendChild(createJSONViewer());
+      break;
+    case "/xml/validator":
+      mainContent.appendChild(createXMLValidator());
       break;
 
     // -- Others (Placeholder) --
