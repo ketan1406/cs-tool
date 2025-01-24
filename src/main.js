@@ -1,4 +1,5 @@
 import { createSidebar } from "./components/sidebar/index.js";
+import { createHomePage } from "./components/home.js";
 
 // Import the case pages (the ones we created earlier):
 import {
@@ -212,8 +213,8 @@ function renderRoute() {
 
     default:
       // If we don't recognize the route, or "/"
-      mainContent.textContent =
-        "Welcome to CS Tool! Pick a tool from the sidebar.";
+      mainContent.appendChild(createHomePage());
+      break;
   }
 }
 
