@@ -5,12 +5,11 @@ export function createHomePage() {
   // Fixed Header Section - Align with sidebar width
   const header = document.createElement("div");
   header.className =
-    "fixed top-0 left-[288px] right-0 h-28 bg-gray-100 dark:bg-dark-4 z-50 shadow-md flex items-center"; // 288px = 72px sidebar * 4
+    "fixed top-0 left-[288px] right-0 h-28 bg-gray-100 dark:bg-dark-4 z-50 shadow-md flex items-center pl-6";
 
-  // Header content container (aligned right)
+  // Header content container (aligned left)
   const headerContent = document.createElement("div");
-  headerContent.className =
-    "max-w-6xl mx-auto pr-6 flex items-center gap-6 mr-auto";
+  headerContent.className = "flex items-center gap-6 pl-6";
 
   // Icon
   const icon = document.createElement("img");
@@ -26,7 +25,7 @@ export function createHomePage() {
   const title = document.createElement("h1");
   title.className =
     "text-4xl font-bold text-gray-7 dark:text-dark-6 mb-1 text-left";
-  title.textContent = "Online Tools";
+  title.textContent = "CS Tools";
 
   // Subtitle
   const subtitle = document.createElement("p");
@@ -45,7 +44,7 @@ export function createHomePage() {
   // Tools Grid
   const grid = document.createElement("div");
   grid.className =
-    "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto p-6 pt-40"; // Increased top padding
+    "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 pt-40"; // Increased top padding
 
   // Format Section
   const formatSection = createToolSection({
